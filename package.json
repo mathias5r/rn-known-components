@@ -8,7 +8,8 @@
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint .",
-    "storybook": "(adb reverse tcp:7007 tcp:7007 || true) && start-storybook"
+    "storybook": "(adb reverse tcp:7007 tcp:7007 || true) && start-storybook",
+    "loki-update": "loki update --output=site/imgs --reference=site/imgs"
   },
   "dependencies": {
     "react": "16.11.0",
