@@ -1,11 +1,8 @@
----
-title: Home
----
 <!doctype html>
 <html>
   <head>
     <meta charset="utf-8">
-    <title>{{ page.title }}</title>
+    <title>Home</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -20,30 +17,48 @@ title: Home
     }
   </script>
   <body>
-    {% directory path: assets/img %}
-      {% assign splitted = file.url | split: "/" %}
+    
+      
       <div id="accordion">
         <div class="card">
           <div class="card-header" id="headingOne">
             <h5 class="mb-0">
-              <button class="btn btn-link" data-toggle="collapse" data-target="#{{ splitted[3] }}" aria-expanded="false" aria-controls="{{ splitted[3] }}">
-                {{ splitted[3] }}
+              <button class="btn btn-link" data-toggle="collapse" data-target="#CustomButtom" aria-expanded="false" aria-controls="CustomButtom">
+                CustomButtom
               </button>
             </h5>
           </div>
-          <div id="{{ splitted[3] }}" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+          <div id="CustomButtom" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
             <div class="card-body">
-              {% directory path: '{{ file.url }}' %}
-                {% assign splited = file.name | split: " " %}
-                {% assign dimensions = splited[0] | split: "x" %}
+              
+                
+                
                 <div style="float:left;margin: auto">
-                  <img width="300px" src="{{file.url}}" onload="handler(this, {{dimensions[0]}}, {{dimensions[1]}})" />
+                  <img width="300px" src="/assets/img/CustomButtom/320x50 Default.png" onload="handler(this, 320, 50)" />
                 </div>
-              {% enddirectory %}
+              
+                
+                
+                <div style="float:left;margin: auto">
+                  <img width="300px" src="/assets/img/CustomButtom/320x50 With custom background.png" onload="handler(this, 320, 50)" />
+                </div>
+              
+                
+                
+                <div style="float:left;margin: auto">
+                  <img width="300px" src="/assets/img/CustomButtom/320x50 With custom text color.png" onload="handler(this, 320, 50)" />
+                </div>
+              
+                
+                
+                <div style="float:left;margin: auto">
+                  <img width="300px" src="/assets/img/CustomButtom/320x50 With loading.png" onload="handler(this, 320, 50)" />
+                </div>
+              
             </div>
           </div>
         </div>
       </div>
-      {% enddirectory %}
+      
   </body>
 </html>
