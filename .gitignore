@@ -59,7 +59,6 @@ buck-out/
 /ios/Pods/
 
 #jekyll
-site/_site/
 site/.sass-cache/
 site/.jekyll-cache/
 site/.jekyll-metadata
