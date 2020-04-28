@@ -8,7 +8,6 @@ const {width} = Dimensions.get('window');
 
 const style = {
   flex: 1,
-  justifyContent: 'center',
   alignItems: 'center',
 };
 
