@@ -37,7 +37,7 @@ title: Home
                 {% assign splited = file.name | split: " " %}
                 {% assign dimensions = splited[0] | split: "x" %}
                 <div style="float:left;margin: auto">
-                  <img width="300px" src="https://github.com/mathias5r/rn-known-components/tree/gh-page{{file.url}}" onload="handler(this, {{dimensions[0]}}, {{dimensions[1]}})" />
+                  <img width="300px" src="{{file.url |remove_first: '/' }}" onload="handler(this, {{dimensions[0]}}, {{dimensions[1]}})" />
                 </div>
               {% enddirectory %}
             </div>
