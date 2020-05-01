@@ -12,11 +12,14 @@ title: Home
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   </head>
   <script>
-    function handler(elementRef, width, height) {
-      var div = elementRef.parentElement;
+    function handler(elementRef, width, height, first, isFirst) {
+      let div = elementRef.parentElement;
       div.style.width=`${width}px`
       div.style.height=`${height}px`
       div.style.overflow="hidden"
+      if(isFirst){
+        first.appendChild(div)
+      }
     }
   </script>
   <body>
@@ -26,8 +29,9 @@ title: Home
         <div class="card">
           <div class="card-header" id="headingOne">
             <h5 class="mb-0">
-              <button class="btn btn-link" data-toggle="collapse" data-target="#{{ splitted[3] }}" aria-expanded="false" aria-controls="{{ splitted[3] }}">
+              <button class="btn btn-link d-flex align-items-center" data-toggle="collapse" data-target="#{{ splitted[3] }}" aria-expanded="false" aria-controls="{{ splitted[3] }}">
                 {{ splitted[3] }}
+                <div style="float:right;margin: auto" id="img_{{ splitted[3] }}" />
               </button>
             </h5>
           </div>
@@ -36,8 +40,13 @@ title: Home
               {% directory path: '{{ file.url }}' %}
                 {% assign splited = file.name | split: " " %}
                 {% assign dimensions = splited[0] | split: "x" %}
-                <div style="float:left;margin: auto">
-                  <img width="300px" src="{{file.url |remove_first: '/' }}" onload="handler(this, {{dimensions[0]}}, {{dimensions[1]}})" />
+                <div style="float:left;margin: auto;text-align: center">
+                  {% if forloop.first != true %}
+                    {{ file.name  }}
+                  {% endif %}
+                  <div>
+                    <img width="300px" src="{{file.url | remove_first: '/' }}" onload="handler(this, {{dimensions[0]}}, {{dimensions[1]}}, img_{{ splitted[3] }},{{ forloop.first }})" />
+                  </div>
                 </div>
               {% enddirectory %}
             </div>
