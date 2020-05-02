@@ -3,82 +3,193 @@
   <head>
     <meta charset="utf-8">
     <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="./assets/css/index.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script type="text/javascript" src='./assets/js/index.js'> </script>
   </head>
-  <script>
-    function handler(elementRef, width, height, first, isFirst) {
-      let div = elementRef.parentElement;
-      div.style.width=`${width}px`
-      div.style.height=`${height}px`
-      div.style.overflow="hidden"
-      if(isFirst){
-        first.appendChild(div)
-      }
-    }
-  </script>
   <body>
     
       
       <div id="accordion">
         <div class="card">
+          
           <div class="card-header" id="headingOne">
-            <h5 class="mb-0">
-              <button class="btn btn-link d-flex align-items-center" data-toggle="collapse" data-target="#CustomButtom" aria-expanded="false" aria-controls="CustomButtom">
-                CustomButtom
-                <div style="float:right;margin: auto" id="img_CustomButtom" />
-              </button>
-            </h5>
-          </div>
-          <div id="CustomButtom" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-            <div class="card-body">
-              
-                
-                
-                <div style="float:left;margin: auto;text-align: center">
-                  
-                  <div>
-                    <img width="300px" src="assets/img/CustomButtom/320x50 Default.png" onload="handler(this, 320, 50, img_CustomButtom,true)" />
-                  </div>
-                </div>
-              
-                
-                
-                <div style="float:left;margin: auto;text-align: center">
-                  
-                    320x50 With custom background.png
-                  
-                  <div>
-                    <img width="300px" src="assets/img/CustomButtom/320x50 With custom background.png" onload="handler(this, 320, 50, img_CustomButtom,false)" />
-                  </div>
-                </div>
-              
-                
-                
-                <div style="float:left;margin: auto;text-align: center">
-                  
-                    320x50 With custom text color.png
-                  
-                  <div>
-                    <img width="300px" src="assets/img/CustomButtom/320x50 With custom text color.png" onload="handler(this, 320, 50, img_CustomButtom,false)" />
-                  </div>
-                </div>
-              
-                
-                
-                <div style="float:left;margin: auto;text-align: center">
-                  
-                    320x50 With loading.png
-                  
-                  <div>
-                    <img width="300px" src="assets/img/CustomButtom/320x50 With loading.png" onload="handler(this, 320, 50, img_CustomButtom,false)" />
-                  </div>
-                </div>
-              
-            </div>
-          </div>
+  <h5 class="mb-0">
+    <button class="btn btn-link d-flex align-items-center" data-toggle="collapse" data-target="#CustomButtom" aria-expanded="true" aria-controls="CustomButtom">
+      CustomButtom
+      <div class="vertical" style="padding-left:10px;" id="img_CustomButtom" />
+    </button>
+  </h5>
+</div>
+          <div id="CustomButtom" class="collapse gray" aria-labelledby="headingOne" data-parent="#accordion">
+  <div class="card-body bg-light">
+    
+      
+      
+      <div class="gray vertical">
+        
+        <div>
+          <img 
+            src="assets/img/CustomButtom/256x50 Default.png" 
+            onload="handler(
+                this, 
+                256, 
+                50, 
+                img_CustomButtom,
+                true
+              )" 
+            />
+        </div>
+      </div>
+    
+      
+      
+      <div class="gray vertical">
+        
+          
+           With custom background
+        
+        <div>
+          <img 
+            src="assets/img/CustomButtom/256x50 With custom background.png" 
+            onload="handler(
+                this, 
+                256, 
+                50, 
+                img_CustomButtom,
+                false
+              )" 
+            />
+        </div>
+      </div>
+    
+      
+      
+      <div class="gray vertical">
+        
+          
+           With custom text color
+        
+        <div>
+          <img 
+            src="assets/img/CustomButtom/256x50 With custom text color.png" 
+            onload="handler(
+                this, 
+                256, 
+                50, 
+                img_CustomButtom,
+                false
+              )" 
+            />
+        </div>
+      </div>
+    
+      
+      
+      <div class="gray vertical">
+        
+          
+           With loading
+        
+        <div>
+          <img 
+            src="assets/img/CustomButtom/256x50 With loading.png" 
+            onload="handler(
+                this, 
+                256, 
+                50, 
+                img_CustomButtom,
+                false
+              )" 
+            />
+        </div>
+      </div>
+    
+  </div>
+</div>          
+        </div>
+      </div>
+      
+      
+      <div id="accordion">
+        <div class="card">
+          
+          <div class="card-header" id="headingOne">
+  <h5 class="mb-0">
+    <button class="btn btn-link d-flex align-items-center" data-toggle="collapse" data-target="#PictureView" aria-expanded="true" aria-controls="PictureView">
+      PictureView
+      <div class="vertical" style="padding-left:10px;" id="img_PictureView" />
+    </button>
+  </h5>
+</div>
+          <div id="PictureView" class="collapse gray" aria-labelledby="headingOne" data-parent="#accordion">
+  <div class="card-body bg-light">
+    
+      
+      
+      <div class="gray vertical">
+        
+        <div>
+          <img 
+            src="assets/img/PictureView/114x114 Default.png" 
+            onload="handler(
+                this, 
+                114, 
+                114, 
+                img_PictureView,
+                true
+              )" 
+            />
+        </div>
+      </div>
+    
+      
+      
+      <div class="gray vertical">
+        
+          
+           With loading
+        
+        <div>
+          <img 
+            src="assets/img/PictureView/114x114 With loading.png" 
+            onload="handler(
+                this, 
+                114, 
+                114, 
+                img_PictureView,
+                false
+              )" 
+            />
+        </div>
+      </div>
+    
+      
+      
+      <div class="gray vertical">
+        
+          
+           With picture
+        
+        <div>
+          <img 
+            src="assets/img/PictureView/114x114 With picture.png" 
+            onload="handler(
+                this, 
+                114, 
+                114, 
+                img_PictureView,
+                false
+              )" 
+            />
+        </div>
+      </div>
+    
+  </div>
+</div>          
         </div>
       </div>
       
