@@ -1,0 +1,26 @@
+<div id="{{ include.title }}" class="collapse gray" aria-labelledby="headingOne" data-parent="#accordion">
+  <div class="card-body bg-light">
+    {% directory path: '{{ include.url }}' %}
+      {% assign name = file.name | split: " " %}
+      {% assign dimensions = name[0] | split: "x" %}
+      <div class="gray vertical">
+        {% if forloop.first != true %}
+          {% assign title = file.name | remove: ".png" | remove: name[0] %}
+          {{ title }}
+        {% endif %}
+        <div>
+          <img 
+            src="{{file.url | remove_first: '/' }}" 
+            onload="handler(
+                this, 
+                {{dimensions[0]}}, 
+                {{dimensions[1]}}, 
+                img_{{ include.title }},
+                {{ forloop.first }}
+              )" 
+            />
+        </div>
+      </div>
+    {% enddirectory %}
+  </div>
+</div>

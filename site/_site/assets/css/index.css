@@ -1,0 +1,13 @@
+.gray {
+  background-color: #f7f7f7;
+}
+
+.vertical {
+  float:left;
+  margin:auto;
+  text-align:center
+}
+
+img {
+  width: 300px;
+}

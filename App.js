@@ -1,5 +1,5 @@
 import React from 'react';
-import CustomButtom from './CustomButton';
+import CustomButtom from './components/CustomButton';
 import styled from 'styled-components';
 import storybook from './storybook';
 
